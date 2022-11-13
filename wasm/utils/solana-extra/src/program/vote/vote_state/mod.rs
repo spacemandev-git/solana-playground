@@ -868,7 +868,8 @@ impl VoteState {
             // Award vote credits based on the number of slots that were voted on and have reached finality
             if feature_set
                 .map(|feature_set| {
-                    feature_set.is_active(&feature_set::vote_state_update_credit_per_dequeue::id())
+                    //feature_set.is_active(&feature_set::vote_state_update_credit_per_dequeue::id())
+                    true // EDITTED WE JUST SAY ALL FEATURE SETS ARE ACTIVE
                 })
                 .unwrap_or(false)
             {

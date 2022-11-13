@@ -317,7 +317,6 @@ impl Default for TransactionStatusMeta {
             post_token_balances: None,
             rewards: None,
             loaded_addresses: LoadedAddresses::default(),
-            return_data: None,
         }
     }
 }
