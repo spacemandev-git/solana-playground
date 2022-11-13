@@ -11,7 +11,6 @@ use solana_sdk::{
     transaction::{
         Result as TransactionResult, TransactionError, TransactionVersion, VersionedTransaction,
     },
-    transaction_context::TransactionReturnData,
 };
 use thiserror::Error;
 
@@ -303,7 +302,6 @@ pub struct TransactionStatusMeta {
     pub post_token_balances: Option<Vec<TransactionTokenBalance>>,
     pub rewards: Option<Rewards>,
     pub loaded_addresses: LoadedAddresses,
-    pub return_data: Option<TransactionReturnData>,
 }
 
 impl Default for TransactionStatusMeta {
@@ -648,7 +646,6 @@ pub struct UiTransactionStatusMeta {
     pub rewards: Option<Rewards>,
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub loaded_addresses: Option<UiLoadedAddresses>,
-    pub return_data: Option<TransactionReturnData>,
 }
 
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
